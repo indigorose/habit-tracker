@@ -1,0 +1,19 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Node.js
+node_modules/
+dist/
+build/
+
+# VS Code
+.vscode/
+
+# Misc
+.env
+.DS_Store
+
+README.md
+ROADMAP.md
