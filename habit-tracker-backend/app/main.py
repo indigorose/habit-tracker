@@ -28,7 +28,7 @@ def create_habit(habit: Habit):
 def get_habit(habit_id: int):
     for habit in habits:
         if habit.id == habit_id:
-            return habit
+            return habit.completed
     return {"error": "Habit not found"}
 
 
