@@ -4,5 +4,6 @@ pydantic
 
 # Testing
 pytest
+pytest-cov
 httpx
 coverage

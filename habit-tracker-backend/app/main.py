@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from app.models import Habit, HabitCreate
 from app.services import mark_habit_complete
 
@@ -8,12 +9,22 @@ app = FastAPI()
 habits: list[Habit] = []
 next_id = 1
 
-# @app.get("/")
-# def read_root():
-#     return {"message": "Habit Tracker API is running!"}
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173"
+]
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # POST endpoint(create habit)
+
+
 @app.post("/habits", response_model=Habit)
 def create_habit(habit_in: HabitCreate):
     global next_id
