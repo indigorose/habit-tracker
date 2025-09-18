@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import HabitForm from './components/HabitForm';
 import HabitList from './components/HabitList';
+import './app.css';
 
 function App() {
 	const [habits, setHabits] = useState([]);
@@ -26,10 +27,17 @@ function App() {
 	};
 
 	return (
-		<div style={{ padding: '2rem' }}>
-			<h1>Habit Tracker</h1>
-			<HabitForm onHabitCreated={handleHabitCreated} />
-			<HabitList habits={habits} onHabitUpdated={handleHabitUpdated} />
+		<div className="min-h-screen bg-gray-100 flex items-center justify-center">
+			<div className="w-full max-w-xl bg-white shadow-md rounded-xl p-6">
+				<h1 className="text-2xl font-bold mb-4 text-center">
+					Habit Tracker
+				</h1>
+				<HabitForm onHabitCreated={handleHabitCreated} />
+				<HabitList
+					habits={habits}
+					onHabitUpdated={handleHabitUpdated}
+				/>
+			</div>
 		</div>
 	);
 }

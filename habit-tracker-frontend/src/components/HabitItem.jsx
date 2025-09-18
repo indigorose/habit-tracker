@@ -1,3 +1,5 @@
+import '../app.css';
+
 function HabitItem({ habit, onHabitUpdated }) {
 	const handleComplete = async () => {
 		const res = await fetch(
@@ -14,9 +16,15 @@ function HabitItem({ habit, onHabitUpdated }) {
 	};
 
 	return (
-		<li>
-			{habit.name} - streak: {habit.streak}
-			<button onClick={handleComplete} style={{ marginLeft: '1rem' }}>
+		<li className="flex justify-between items-center p-2 border-b">
+			<span>
+				{habit.name} –{' '}
+				<span className="text-gray-500">streak: {habit.streak}</span>
+			</span>
+			<button
+				onClick={handleComplete}
+				className="bg-green-600 text-white px-3 py-1 rounded-lg hover:bg-green-700"
+			>
 				Mark Complete
 			</button>
 		</li>

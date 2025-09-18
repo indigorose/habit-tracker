@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../app.css';
 
 function HabitForm({ onHabitCreated }) {
 	const [name, setName] = useState('');
@@ -21,22 +22,29 @@ function HabitForm({ onHabitCreated }) {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} style={{ marginBottom: '1rem' }}>
+		<form onSubmit={handleSubmit} className="flex gap-2 mb-4">
 			<input
 				type="text"
 				value={name}
 				onChange={(e) => setName(e.target.value)}
 				placeholder="Habit name"
 				required
+				className="flex-1 border rounded-lg px-3 py-2"
 			/>
 			<select
 				value={frequency}
 				onChange={(e) => setFrequency(e.target.value)}
+				className="border rounded-lg px-2 py-2"
 			>
 				<option value="daily">Daily</option>
 				<option value="weekly">Weekly</option>
 			</select>
-			<button type="submit">Add Habit</button>
+			<button
+				type="submit"
+				className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+			>
+				Add
+			</button>
 		</form>
 	);
 }
