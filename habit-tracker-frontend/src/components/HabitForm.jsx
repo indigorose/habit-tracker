@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../app.css';
+import API_URL from '../api';
 
 function HabitForm({ onHabitCreated }) {
 	const [name, setName] = useState('');
@@ -7,7 +8,7 @@ function HabitForm({ onHabitCreated }) {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const res = await fetch('http://127.0.0.1:8000/habits', {
+		const res = await fetch(`${API_URL}`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ name, frequency }),

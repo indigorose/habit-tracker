@@ -1,13 +1,11 @@
 import '../app.css';
+import API_URL from '../api';
 
 function HabitItem({ habit, onHabitUpdated }) {
 	const handleComplete = async () => {
-		const res = await fetch(
-			`http://127.0.0.1:8000/habits/${habit.id}/complete`,
-			{
-				method: 'POST',
-			}
-		);
+		const res = await fetch(`${API_URL}/habits/${habit.id}/complete`, {
+			method: 'POST',
+		});
 
 		if (res.ok) {
 			const updated = await res.json();
