@@ -11,7 +11,8 @@ next_id = 1
 
 origins = [
     "http://localhost:5173",
-    "http://127.0.0.1:5173"
+    "http://127.0.0.1:5173",
+    "https://habit-tracker-five-tau.vercel.app/"
 ]
 
 app.add_middleware(
