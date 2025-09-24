@@ -11,3 +11,21 @@ This project demonstrates CRUD operations, business logic (habit streaks), and u
 - React frontend with Tailwind CSS
 - REST API through FastAPI
 - Unit Testing on both front and backend
+
+## Tech Stack
+
+Frontend
+
+- React (Vite)
+
+- Tailwind CSS
+
+- Jest + React Testing Library
+
+Backend
+
+- FastAPI
+
+- Uvicorn
+
+- pytest + httpx + coverage
